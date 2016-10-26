@@ -1,0 +1,31 @@
+1. As a new advisor I want to create an account so I can start using the program for advisement.
+2. As a new Advisee I want to create an account so I can start organizing my plan of study.
+3. As an administrator I want to login and add classes to the current plan of study for a school’s program.
+4. As a returning advisee I want to login and edit my current plan of study.
+5. As a new advisee I want to choose what school I attend so I know I’m following the right plan of study.
+6. As a new advisee I want to choose what major I’m in so I’m following the right plan of study.
+7. As a new advisee I want to add classes I have taken and are currently taken so I know what I should look for next.
+8. As an advisee I want to see only the class names when pick the courses I’m going to take or have taken.
+9. As an advisee I want to send my updated plan of study to my advisor for review.
+10. As an advisee I want to Replace a course with one I got approved to override so I know I don’t have to worry about that course.
+11. As an advisee I want to be able to reset my password so I can log in again.
+12. As an advisee I want to receive notifications about changes to made to my plan of study so I know when I must review and make sure I’m still on track.
+13. As an advisee I want to change my major so I can pursue a different path.
+14. As a transfer advisee I want to change colleges but keep the classes that transferred over to my new plan of study. 
+15. As an advisee I want to see what courses are offered at my college.
+16. As an advisee I want to view my advisors name and email so I can contact them with any questions I might have.
+17. as an advisor I want to login and view my advisees so I can see who needs help with their plan of study. 
+18. As an advisor I want to customize my profile with information about me and contact information so I can be easily contacted and show advisees I’m welcoming and willing to help.
+19. As an advisor I want to upload a picture of myself so advisees know who I am.
+20. As an advisor I want to be able to add new advisees from my roster that requested me so I can properly advise those I’m required to.
+21. As an advisor I want to remove old advisees that no longer are on my roster so I can focus on those that still need my help.
+22. as an advisor I want to receive update statuses on advisees who recently made changes to their plan of study so I can review them for confirmation.
+23. As an advisor I want to print out an advisee’s plan of study in the required format so it can be submitted to the registrar’s office.
+24. As an advisor I want to send approval notices so advisees know I looked over their plan of study.
+25. As an advisor I want to display my office hours so advisees know when I will be in my office.
+26. As an advisor I want to allow advisees to make appointments to meet with me based on my office hours so we can discuss and finalize their plan of study.
+27. As an advisor I want to label classes for different semesters since I know what is offered ahead of time so the advisee is more prepared.
+28. As an advisee I want to set grades that I received for class I completed so I know if I have the required grade on the prerequisite class.
+29. As an advisee I want to view the detailed information about a class so I know what the class id is for registration.
+30. As an advisee I want to see my overall credit hours so I can see my progress so far.
+ 
