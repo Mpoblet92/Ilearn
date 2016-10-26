@@ -1,0 +1,21 @@
+A = easy
+B = Medium
+C = Hard
+D = Very Hard
+F = Epic
+
+1. Login = A
+
+Main menu =B
+
+View Plan of study and prioritize = C
+
+Edit Profile = A
+
+Schedual Appointments = F
+  - Calander view = B
+  - Request = F 
+    + Advisor Availability = B
+    + Request form = A
+    + Availability Cross referece = B
+  
