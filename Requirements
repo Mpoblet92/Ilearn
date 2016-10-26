@@ -1,0 +1,25 @@
+Requirements
+1.	Create an account as a Student or advisor.
+2.	Manage which University the user attends.
+3.	Manage users major.
+4.	Manage users plan of study
+5.	Manage courses offered by users University.
+6.	Provide user with a simplistic and informative view of courses required.
+7.	Manage users sharable profile.
+8.	Manage advisor’s rights to edit student’s profiles.
+9.	Manage users adding and dropping courses. 
+10.	Manage editing courses with overriding ones.
+11.	Provide a warning before modifying a course required.
+12.	Manage advisor’s rights to removing students no longer needing advising. (graduated, major change, etc.)
+13.	Manage user’s ability to label courses in their plan of study. (completed, spring 20xx, summer 20xx, fall 20xx, and default is uncompleted)
+14.	Restrict account creation emails to University emails. (.edu extensions)
+15.	Require passwords of 8 characters or more including at least one uppercase and special character.
+16.	Manage storage service of documents, photos, etc.
+17.	Provide warning if file size uploaded is too big
+18.	Provide internal email service for direct communication with advisor.
+19.	Provide internal instant messaging service for direct communication with advisor.
+20.	Manage communication between servers
+
+•	Provide 5 second recovery of all courses required by the particular University’s plan of study.
+•	Provide 1 second updated information of changes made by each user on their profile. (advisor adding a course to be taken next semester, or student having completed a course already.)
+•	Provide >1 second account confirmation emails, and password recovery.
