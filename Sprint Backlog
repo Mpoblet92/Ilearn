@@ -1,6 +1,12 @@
 ## Sprint BackLog
 ### October 26 - Novemer 7
 
+A = Half-Day
+B = Full-Day
+C = 2 Days
+D = 3 Days or more
+F = Undetermined
+
 1. As a new advisor I want to create an account so I can start using the program for advisement. (B)
 2. As a new Advisee I want to create an account so I can start organizing my plan of study. (B)
 3. As an administrator I want to login so I can modify Schools plan of study. (B)
