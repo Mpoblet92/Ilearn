@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="229.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.Controller.loginController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="229.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.loginController">
   <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="161.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="189.0" />
@@ -35,7 +35,7 @@
             <Insets left="10.0" right="20.0" />
          </GridPane.margin>
       </TextField>
-      <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#clickOnLogin" prefHeight="25.0" prefWidth="77.0" text="Login" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <Button mnemonicParsing="false" onAction="#clickOnLogin" prefHeight="25.0" prefWidth="77.0" text="Login" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
@@ -50,7 +50,7 @@
             <Insets left="10.0" right="20.0" />
          </GridPane.margin>
       </PasswordField>
-      <Text fx:id="linkRegister" fill="#009df8" onDragDetected="#clickOnRegister" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: true;" text="Register!" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+      <Text fx:id="linkRegister" fill="#009df8" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: true;" text="Register!" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
       <Label fx:id="lblActionStatus" prefHeight="17.0" prefWidth="194.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
    </children>
 </GridPane>
