@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.mainmenuController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.planofstudyController">
    <top>
-      <Label text="Main Menu" BorderPane.alignment="CENTER">
+      <Label text="Plan of Study" BorderPane.alignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
@@ -28,17 +28,14 @@
           <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnLogout" onAction="#clickLogout" mnemonicParsing="false" text="Logout" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button  fx:id="btnBack" onAction="#clickBack" mnemonicParsing="false" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </Button>
             <VBox alignment="CENTER" prefHeight="190.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="btnPoS" onAction="#clickPlanofStudy" minWidth="100.0" mnemonicParsing="false" text="Plan of Study" />
-                  <Button fx:id="btnAdvisor" onAction="#clickAdvisor" minWidth="100.0" mnemonicParsing="false" text="Advisor" />
-                  <Button fx:id="btnCourses" onAction="#clickCourses" minWidth="100.0" mnemonicParsing="false" text="Courses" />
-                  <Button fx:id="btnPreferences" onAction="#clickPreferences" minWidth="100.0" mnemonicParsing="false" text="Preferences" />
+                  <Label text="Current Courses" />
                </children>
             </VBox>
          </children>
