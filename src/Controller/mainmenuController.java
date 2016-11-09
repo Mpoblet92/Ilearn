@@ -32,7 +32,7 @@ public class mainmenuController {
 	{
 		Stage stage = (Stage) btnCourses.getScene().getWindow();
 		stage.close();
-		planOfStudyPage();
+		coursePage();
 	}
 	
 	@FXML
@@ -40,7 +40,7 @@ public class mainmenuController {
 	{
 		Stage stage = (Stage) btnPref.getScene().getWindow();
 		stage.close();
-		planOfStudyPage();
+		preferencePage();
 	}
 	
 	@FXML

@@ -25,7 +25,7 @@ import javafx.stage.Stage;
 public class loginController {
 	@FXML private TextField txtUsername, txtEmail;
 	@FXML private PasswordField txtPassword;
-	@FXML private Button btnLogin, btnPos;
+	@FXML private Button btnLogin, btnPos, btnBack;
 	@FXML private Label lblStatus, lblActionStatus;
 	@FXML private Hyperlink linkRegister;
 
@@ -105,6 +105,17 @@ public class loginController {
 		txtPassword.setText("");
 	}
 
+	@FXML 
+	public void clickOnBack(ActionEvent event) throws Exception
+	{
+		Stage stage = (Stage) btnBack.getScene().getWindow();
+		stage.close();
+		Stage primaryStage = new Stage();
+		Parent root = FXMLLoader.load(getClass().getResource("/View/LoginView.fxml"));
+		Scene scene = new Scene(root,400,400);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
 	public void mainMenuPage() throws Exception
 	{
 		Stage primaryStage = new Stage();
