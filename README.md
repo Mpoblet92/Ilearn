@@ -6,3 +6,6 @@
   
   "Failing to plan is planning to fail"
                           -Alan Lakein
+
+### Done
+  The defenition of done for this project is having the ability to succesfully register a user as an advisor or a student and displaying the proper information for each user type. The advisor should be able to view a list of advisees and what their current plan of study looks like. The student should be able to see thier current advisors profile and thier current plan of study. The student needs to be able to easily view what courses they have taken and which ones they are still needing. 

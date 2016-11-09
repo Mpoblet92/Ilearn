@@ -28,17 +28,17 @@
           <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnLogout" onAction="#clickLogout" mnemonicParsing="false" text="Logout" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#clickLogout" text="Logout" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </Button>
             <VBox alignment="CENTER" prefHeight="190.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="btnPoS" onAction="#clickPlanofStudy" minWidth="100.0" mnemonicParsing="false" text="Plan of Study" />
-                  <Button fx:id="btnAdvisor" onAction="#clickAdvisor" minWidth="100.0" mnemonicParsing="false" text="Advisor" />
-                  <Button fx:id="btnCourses" onAction="#clickCourses" minWidth="100.0" mnemonicParsing="false" text="Courses" />
-                  <Button fx:id="btnPreferences" onAction="#clickPreferences" minWidth="100.0" mnemonicParsing="false" text="Preferences" />
+                  <Button fx:id="btnPoS" minWidth="100.0" mnemonicParsing="false" onAction="#clickPlanofStudy" text="Plan of Study" />
+                  <Button fx:id="btnAdvisor" minWidth="100.0" mnemonicParsing="false" onAction="#clickAdvisor" text="Advisor" />
+                  <Button fx:id="btnCourses" minWidth="100.0" mnemonicParsing="false" onAction="#clickCourse" text="Courses" />
+                  <Button fx:id="btnPref" minWidth="100.0" mnemonicParsing="false" onAction="#clickPreferences" text="Preferences" />
                </children>
             </VBox>
          </children>

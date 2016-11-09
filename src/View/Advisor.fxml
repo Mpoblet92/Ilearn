@@ -7,37 +7,37 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.advisorController">
-   <top>
-      <Label text="Advisor" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-   </top>
    <center>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane prefHeight="353.0" prefWidth="300.0" BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="112.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="188.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="247.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="122.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button  fx:id="btnBack" onAction="#clickBack" mnemonicParsing="false" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#clickBack" text="Back" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </Button>
-            <VBox alignment="CENTER" prefHeight="190.0" prefWidth="300.0">
-               <children>
-                  <Label text="Current Courses" />
-               </children>
-            </VBox>
+            <Label prefHeight="17.0" prefWidth="55.0" text="Name:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <Label fx:id="lblAdvisorName" prefHeight="17.0" prefWidth="191.0" text="Dr. Tamirat Abegaz" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <Label fx:id="lblAdvisorEmail" prefHeight="17.0" prefWidth="191.0" text="tamirat.abegaz@ung.edu" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label layoutX="67.0" layoutY="54.0" prefHeight="17.0" prefWidth="55.0" text="Email:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label layoutX="67.0" layoutY="104.0" prefHeight="17.0" prefWidth="91.0" text="Office Hours:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Label fx:id="lblAdvisorHours" prefHeight="17.0" prefWidth="212.0" text="W and F 1:00pm - 3:00pm" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Label text="Advisor" GridPane.columnIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
    </center>
