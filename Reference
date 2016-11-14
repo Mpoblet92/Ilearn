@@ -1,11 +1,11 @@
 # Reference
 ## Difficulty Relations
 
-A = easy
-B = Medium
-C = Hard
-D = Very Hard
-F = Epic
+A = easy 4.0
+B = Medium 3.0
+C = Hard 2.0
+D = Very Hard 1.0
+F = Epic 0.0
 
 1. Login = A
 
