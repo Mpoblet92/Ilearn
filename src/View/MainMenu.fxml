@@ -36,7 +36,9 @@
             <VBox alignment="CENTER" prefHeight="190.0" prefWidth="300.0">
                <children>
                   <Button fx:id="btnPoS" minWidth="100.0" mnemonicParsing="false" onAction="#clickPlanofStudy" text="Plan of Study" />
+                  <Button fx:id="btnAdvisee" minWidth="100.0" mnemonicParsing="false" onAction="#clickAdvisee" text="Advisee" />
                   <Button fx:id="btnAdvisor" minWidth="100.0" mnemonicParsing="false" onAction="#clickAdvisor" text="Advisor" />
+                  <Button fx:id="btnAdmin" minWidth="100.0" mnemonicParsing="false" onAction="#clickAdmin" text="Admin" />
                   <Button fx:id="btnCourses" minWidth="100.0" mnemonicParsing="false" onAction="#clickCourse" text="Courses" />
                   <Button fx:id="btnPref" minWidth="100.0" mnemonicParsing="false" onAction="#clickPreferences" text="Preferences" />
                </children>

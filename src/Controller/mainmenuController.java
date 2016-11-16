@@ -10,7 +10,15 @@ import javafx.stage.Stage;
 
 public class mainmenuController {
 
-	@FXML private Button btnPoS, btnLogout, btnAdvisor, btnCourses, btnPref;
+	@FXML private Button btnPoS, btnLogout, btnAdvisee, btnAdvisor, btnAdmin, btnCourses, btnPref;
+
+	@FXML
+	public void clickAdvisee(ActionEvent event) throws Exception
+	{
+		Stage stage = (Stage) btnAdvisee.getScene().getWindow();
+		stage.close();
+		adviseePage();
+	}
 	
 	@FXML
 	public void clickAdvisor(ActionEvent event) throws Exception
@@ -19,6 +27,15 @@ public class mainmenuController {
 		stage.close();
 		advisorPage();
 	}
+	
+	@FXML
+	public void clickAdmin(ActionEvent event) throws Exception
+	{
+		Stage stage = (Stage) btnAdmin.getScene().getWindow();
+		stage.close();
+		adminPage();
+	}
+	
 	@FXML
 	public void clickPlanofStudy(ActionEvent event) throws Exception
 	{
@@ -69,6 +86,15 @@ public class mainmenuController {
 		primaryStage.show();
 	}
 	
+	public void adviseePage() throws Exception
+	{
+		Stage primaryStage = new Stage();
+		Parent root = FXMLLoader.load(getClass().getResource("/View/Advisee.fxml"));
+		Scene scene = new Scene(root,400,400);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
 	public void advisorPage() throws Exception
 	{
 		Stage primaryStage = new Stage();
@@ -77,6 +103,16 @@ public class mainmenuController {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+	
+	public void adminPage() throws Exception
+	{
+		Stage primaryStage = new Stage();
+		Parent root = FXMLLoader.load(getClass().getResource("/View/Admin.fxml"));
+		Scene scene = new Scene(root,400,400);
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
 	public void preferencePage() throws Exception
 	{
 		Stage primaryStage = new Stage();

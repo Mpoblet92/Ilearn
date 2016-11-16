@@ -98,7 +98,7 @@ public class loginController {
 	}
 	
 	@FXML
-	public void clickOnSubmit(ActionEvent event) 
+	public void clickOnSubmit(ActionEvent event)
 	{
 		txtUsername.setText("");
 		txtEmail.setText("");
