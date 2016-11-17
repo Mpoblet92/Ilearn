@@ -44,10 +44,14 @@ public class newuserController {
 	@FXML
 	public void clickSubmit(ActionEvent event) throws Exception
 	{
-		//Stage stage = (Stage) btnCancel.getScene().getWindow();
+		
+		
+		int pwd = passwordCheck();
+		int email = emailCheck();
+		int user = usernameCheck();
 
-		switch (passwordCheck()) {
-		case 0: lblError.setText("Passwords are good!");
+		switch (pwd) {
+		case 0: 
 		break;
 		case 1: lblError.setText("Empty Password Field");
 		break;
@@ -57,8 +61,8 @@ public class newuserController {
 	    break;
 		}
 		
-		switch (emailCheck()) {
-		case 0: lblError.setText("Email is good!");
+		switch (email) {
+		case 0: 
 		break;
 		case 1: lblError.setText("Empty Email Field");
 		break;
@@ -70,14 +74,21 @@ public class newuserController {
 		break;
 		}
 		
-		switch (usernameCheck()) {
-		case 0: lblError.setText("Username is good");
+		switch (user) {
+		case 0: 
 		break;
 		case 1: lblError.setText("Empty Username Field");
 		break;
 		case 2: lblError.setText("Username is in use");
 		break;
 		}
+		
+		if(pwd  + email + user == 0){
+			//Stage stage = (Stage) btnCancel.getScene().getWindow();
+			//profilePage();
+			lblError.setText("Good to go!");
+		}
+			
 	}
 	
 	public void profilePage() throws Exception
