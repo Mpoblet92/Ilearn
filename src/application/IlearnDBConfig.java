@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public class IlearnDBConfig {
 	private static final String USERNAME = "root";
+	private static final String PASSWORD = "";
 	private static final String CONN_STRING = "jdbc:mysql://localhost/ilearndb";
 
 	// connection  method that connects us to the MySQL database
