@@ -21,7 +21,7 @@
       </Label>
    </top>
    <bottom>
-      <GridPane prefHeight="251.0" prefWidth="588.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="578.0" prefWidth="588.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -37,7 +37,14 @@
             </Button>
             <Accordion prefHeight="271.0" prefWidth="300.0">
               <panes>
-                  <TitledPane animated="false" prefHeight="178.0" prefWidth="588.0" text="Area A" />
+                  <TitledPane animated="false" onMouseClicked="#loadPlan" prefHeight="253.0" prefWidth="558.0" text="Area A">
+                     <content>
+                        <Accordion fx:id="listA" prefHeight="193.0" prefWidth="545.0">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Accordion>
+                     </content></TitledPane>
                 <TitledPane animated="false" text="Area B" wrapText="true" />
                 <TitledPane animated="false" text="Area C" wrapText="true" />
                 <TitledPane animated="false" text="Area D" wrapText="true" />

@@ -1,9 +1,11 @@
 package Model;
 
 public class PlanOfStudy {
-	private String areaA, areaB, areaC, areaD, areaE, areaF, areaMajor, areaMajorElec, areaOther, areaElec;
+	private String major, pos, areaA, areaB, areaC, areaD, areaE, areaF, areaMajor, areaMajorElec, areaOther, areaElec;
 	
-	public PlanOfStudy(String areaA, String areaB, String areaC, String areaD, String areaE, String areaF, String areaMajor, String areaMajorElec, String areaOther, String areaElec) {
+	public PlanOfStudy(String major, String pos, String areaA, String areaB, String areaC, String areaD, String areaE, String areaF, String areaMajor, String areaMajorElec, String areaOther, String areaElec) {
+		this.major = major;
+		this.pos = pos;
 		this.areaA = areaA;
 		this.areaB = areaB;
 		this.areaC = areaC;
@@ -16,6 +18,22 @@ public class PlanOfStudy {
 		this.areaElec = areaElec;
 	}
 	
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
+	public String getPos() {
+		return pos;
+	}
+
+	public void setPos(String pos) {
+		this.pos = pos;
+	}
+
 	public String getAreaA() {
 		return areaA;
 	}

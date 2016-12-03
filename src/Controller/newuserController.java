@@ -183,7 +183,6 @@ public class newuserController {
 	public boolean checkEmail(String value)
 	{
 		String pattern = "\\b^[A-Za-z][A-Za-z][A-Za-z][a-z]*\\d{4}(@ung[.]edu$)\\b";
-		System.out.println(pattern);
 		return value.matches(pattern);
 	}
 	
