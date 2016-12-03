@@ -7,6 +7,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -57,7 +58,10 @@
                         <Insets top="10.0" />
                      </padding>
                   </Label>
-                  <PasswordField fx:id="txtPassword" maxWidth="200.0" />
+                  <PasswordField fx:id="txtPassword" maxWidth="200.0" onMouseMoved="#setTooltip">
+                     <tooltip>
+                        <Tooltip fx:id="toolPassword" wrapText="true" />
+                     </tooltip></PasswordField>
                   <Label text="Confirm Password">
                      <padding>
                         <Insets top="10.0" />
@@ -88,22 +92,22 @@
             </VBox>
             <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="52.0" prefWidth="300.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <children>
-                  <Button fx:id="btnCancel" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clickCancel" text="Cancel">
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </Button>
                   <Button fx:id="btnSubmit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clickSubmit" text="Submit">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnCancel" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clickCancel" text="Cancel">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
-            <Label fx:id="lblError" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Label fx:id="lblError" textFill="#a83030" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
          </children>
       </GridPane>
    </center>
