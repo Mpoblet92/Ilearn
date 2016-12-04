@@ -45,6 +45,7 @@ public class planofstudyController {
 			areaF = rs.getString("AreaF");
 			majorArea = rs.getString("majorArea");
 		}
+		con.close();
 			parsedAreaA = parser.and(areaA);
 			//parsedAreaB = parser.and(areaB);
 			parsedAreaC = parser.and(areaC);
@@ -55,13 +56,7 @@ public class planofstudyController {
 			
 			setTitlePane(listA, parsedAreaA);
 		/*
-		String getCourseName = "select courseName from course where courseId='Math 1450'";
-		ResultSet r = stmt.executeQuery(getCourseName);
-		while(r.next())
-		{
-			String course = r.getString("courseName");
-			System.out.println(course);
-		}
+		
 		TextArea desc = new TextArea();
 		TitledPane titleAreaA = new TitledPane("english", desc);
 		listA.getPanes().addAll(titleAreaA);
@@ -87,8 +82,25 @@ public class planofstudyController {
 				TextArea descr = new TextArea();
 				TitledPane titleArea = new TitledPane(parsedArea[i], descr);
 				list.getPanes().addAll(titleArea);
+				
 			}
 		}
+	}
+	
+	public String[] getCourseInfo() throws Exception
+	{
+		String[] course = new String[2];
+		Connection con = IlearnDBConfig.getConnection();
+		Statement stmt = con.createStatement();
+		String getCourseName = "select courseName from course where courseId='Math 1450'";
+		ResultSet r = stmt.executeQuery(getCourseName);
+		while(r.next())
+		{
+			course[0] = r.getString("courseName");
+			course[1] = r.getString("description");
+		}
+		con.close();
+		return course;
 	}
 	
 	@FXML
