@@ -81,7 +81,7 @@ public class mainmenuController {
 	{
 		Stage primaryStage = new Stage();
 		Parent root = FXMLLoader.load(getClass().getResource("/View/PlanofStudy.fxml"));
-		Scene scene = new Scene(root,400,400);
+		Scene scene = new Scene(root,700,725);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

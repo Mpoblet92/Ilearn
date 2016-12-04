@@ -18,14 +18,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TitledPane;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 public class planofstudyController {
 	
 	@FXML private Button btnBack;
-	@FXML private Accordion listA, listB, listC, listD, listE, listF, listMajor;
+	@FXML private Accordion listA, listB, listC, listD, listE, listF, listMajor, listMajorElective, listOther, listElective;
 	
-	public void loadPlan() throws Exception
+	public void initialize() throws Exception
 	{
 		String major, pos, areaA = null, areaB = null, areaC = null, areaD = null, areaE = null, areaF = null, majorArea = null;
 		String[] parsedAreaA, parsedAreaB, parsedAreaC, parsedAreaD, parsedAreaE, parsedAreaF, parsedMajorArea;
@@ -55,6 +56,12 @@ public class planofstudyController {
 			parsedMajorArea = parser.and(majorArea);
 			
 			setTitlePane(listA, parsedAreaA);
+			//setTitlePane(listB, parsedAreaB);
+			setTitlePane(listC, parsedAreaC);
+			setTitlePane(listD, parsedAreaD);
+			setTitlePane(listE, parsedAreaE);
+			setTitlePane(listF, parsedAreaF);
+			setTitlePane(listMajor, parsedMajorArea);
 		/*
 		
 		TextArea desc = new TextArea();
@@ -63,7 +70,7 @@ public class planofstudyController {
 	*/
 	}
 	
-	public void setTitlePane(Accordion list, String[] parsedArea)
+	public void setTitlePane(Accordion list, String[] parsedArea) throws Exception
 	{
 		for (int i = 0; i < parsedArea.length;i++)
 		{
@@ -72,32 +79,43 @@ public class planofstudyController {
 				String[] orClass = parser.or(parsedArea[i]);
 				for(int o = 0; o < orClass.length; o++)
 				{
+					String[] course = getCourseInfo(orClass[o]); 
 					TextArea desc = new TextArea();
-					TitledPane titleOrArea = new TitledPane(orClass[o], desc);
+					TitledPane titleOrArea = new TitledPane(course[0], desc);
 					list.getPanes().addAll(titleOrArea);
+					desc.setWrapText(true);
+					desc.setText("Course ID: " + orClass[o] + "\n");
+					desc.appendText("Description: " + course[1]);
+					desc.setEditable(false);
+					
 				}
 			}
 			else
 			{
-				TextArea descr = new TextArea();
-				TitledPane titleArea = new TitledPane(parsedArea[i], descr);
-				list.getPanes().addAll(titleArea);
+				String[] course = getCourseInfo(parsedArea[i]); 
+				TextArea desc = new TextArea();
+				TitledPane titleAndArea = new TitledPane(course[0], desc);
+				list.getPanes().addAll(titleAndArea);
+				desc.setWrapText(true);
+				desc.setText("Course ID: " + parsedArea[i] + "\n");
+				desc.appendText("Description: " + course[1]);
+				desc.setEditable(false);
 				
 			}
 		}
 	}
 	
-	public String[] getCourseInfo() throws Exception
+	public String[] getCourseInfo(String courseId) throws Exception
 	{
 		String[] course = new String[2];
 		Connection con = IlearnDBConfig.getConnection();
 		Statement stmt = con.createStatement();
-		String getCourseName = "select courseName from course where courseId='Math 1450'";
-		ResultSet r = stmt.executeQuery(getCourseName);
+		String getCourseInfo = "select courseName, courseDescription from course where courseId='" + courseId + "'";
+		ResultSet r = stmt.executeQuery(getCourseInfo);
 		while(r.next())
 		{
 			course[0] = r.getString("courseName");
-			course[1] = r.getString("description");
+			course[1] = r.getString("courseDescription");
 		}
 		con.close();
 		return course;
