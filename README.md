@@ -8,4 +8,4 @@
                           -Alan Lakein
 
 ### Done
-    The definition of done for this project is having the ability to successfully register a user as an advisor or a student and displaying the proper information for each user type. The advisor should be able to view a list of advisees and what their current plan of study looks like. The student should be able to see their current advisors profile and their current plan of study. The student needs to be able to easily view what courses they have taken and which ones they are still needing.
+  The definition of done for this project is having the ability to successfully register a user as an advisor or a student and displaying the proper information for each user type. The advisor should be able to view a list of advisees and what their current plan of study looks like. The student should be able to see their current advisors profile and their current plan of study. The student needs to be able to easily view what courses they have taken and which ones they are still needing.
