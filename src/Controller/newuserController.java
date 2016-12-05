@@ -1,6 +1,10 @@
 package Controller;
 
 import java.lang.reflect.Array;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +20,8 @@ import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import application.IlearnDBConfig;
 
 public class newuserController {
 	
@@ -97,12 +103,19 @@ public class newuserController {
 		if(pwd  + email + user == 0){
 			//Stage stage = (Stage) btnCancel.getScene().getWindow();
 			//profilePage();
-			txtPassword.setText("");
-			txtPasswordConfirm.setText("");
-			txtEmail.setText("");
-			txtEmailConfirm.setText("");
-			txtUsername.setText("");
-			lblError.setText("Account Succesfully Created!");
+			if(!registerUser())
+			{
+				lblError.setText("User Already Exists!");
+			}
+			else
+			{
+				txtPassword.setText("");
+				txtPasswordConfirm.setText("");
+				txtEmail.setText("");
+				txtEmailConfirm.setText("");
+				txtUsername.setText("");
+				lblError.setText("Account Succesfully Created!");
+			}
 		}
 			
 	}
@@ -176,8 +189,39 @@ public class newuserController {
 		return 0;
 	}
 	
+	public boolean registerUser() throws Exception
+	{ 
+		String query = "insert into user " + "(username, password, role, email)" + "values(?,?,?,?)";
+		try (Connection conn = IlearnDBConfig.getConnection();
+				PreparedStatement insertUser = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);) {
+
+			// get values
+			String username, email, password;
+			int role;
+			username = txtUsername.getText();
+			email = txtEmail.getText();
+			password = txtPassword.getText();
+			System.out.println(radStudent.getToggleGroup());
+			if(radStudent.getToggleGroup() == null)
+				role = 3;
+			else
+				role = 2;
+			insertUser.setString(1, username);
+			insertUser.setString(2, password);
+			insertUser.setInt(3, role);
+			insertUser.setString(4, email);
+			insertUser.executeUpdate();
+			return true;
+		}catch (Exception e)
+		{
+			System.out.println(e);
+			return false;
+		}
+		
+	}
+	
 	public boolean checkPassword(String value){
-		String pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
+		String pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$";
 		return value.matches(pattern);
 		}
 	public boolean checkEmail(String value)

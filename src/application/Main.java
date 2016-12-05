@@ -12,7 +12,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/View/LoginView.fxml"));
-			Scene scene = new Scene(root,300,250);
+			Scene scene = new Scene(root,500,300);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();

@@ -32,7 +32,7 @@
          <children>
             <Button fx:id="btnBack" mnemonicParsing="false" onAction="#clickBack" text="Back" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets />
+                  <Insets left="150.0" />
                </GridPane.margin>
             </Button>
             <Accordion prefHeight="271.0" prefWidth="300.0">
@@ -114,6 +114,11 @@
                   </TitledPane>
               </panes>
             </Accordion>
+            <Button fx:id="btnSave" mnemonicParsing="false" text="Save" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="150.0" />
+               </GridPane.margin>
+            </Button>
          </children>
       </GridPane>
    </center>

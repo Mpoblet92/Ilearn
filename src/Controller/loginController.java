@@ -1,7 +1,11 @@
 package Controller;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
+import application.IlearnDBConfig;
 import application.Main;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -36,24 +40,23 @@ public class loginController {
 		    @Override
 		    public void handle(KeyEvent keyEvent){
 		        if (keyEvent.getCode() == KeyCode.ENTER)  {
-		    		if(txtUsername.getText().equals("user") && txtPassword.getText().equals("pass"))
-		    		{
-		    			lblActionStatus.setText("Success!");
-		    			lblActionStatus.setTextFill(Color.GREEN);
-		    		    Stage stage = (Stage) btnLogin.getScene().getWindow();
-		    		    stage.close();
-		    		    try {
+		    		try {
+						if(requestUserEntry())
+						{
+							lblActionStatus.setText("Success!");
+							lblActionStatus.setTextFill(Color.GREEN);
+						    Stage stage = (Stage) btnLogin.getScene().getWindow();
+						    stage.close();
 							mainMenuPage();
-						} catch (Exception e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
 						}
-		    		}
-		    		else
-		    		{
-		    			lblActionStatus.setText("Invalid Username or Password!");
-		    			lblActionStatus.setTextFill(Color.FIREBRICK);
-		    		}
+						else
+						{
+							lblActionStatus.setText("Invalid Username or Password!");
+							lblActionStatus.setTextFill(Color.FIREBRICK);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 		    		txtUsername.setText("");
 		    		txtPassword.setText("");
 		        }
@@ -134,9 +137,20 @@ public class loginController {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-	/*private void requestUserEntry() {
-		String query = "request user entry " + "(user, password)"
-				+ "values(?,?)";
-		ResultSet keys = null;
-	 }*/
+	private boolean requestUserEntry() throws Exception
+	{
+		String user = txtUsername.getText();
+		String pass = txtPassword.getText();
+		String query = "select password from user where username='" + user + "'";
+		Connection con = IlearnDBConfig.getConnection();
+		Statement stmt = con.createStatement();
+		ResultSet authenticate = stmt.executeQuery(query);
+		String mainPass = null;
+		while(authenticate.next())
+			mainPass = authenticate.getString("password");
+		authenticate.close();
+		if(mainPass != null)
+			return mainPass.equals(pass) ? true:false;
+		return false;
+	 }
 }

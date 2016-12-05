@@ -4,20 +4,25 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import Model.parser;
 import application.IlearnDBConfig;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
@@ -25,11 +30,11 @@ public class planofstudyController {
 	
 	@FXML private Button btnBack;
 	@FXML private Accordion listA, listB, listC, listD, listE, listF, listMajor, listMajorElective, listOther, listElective;
-	
+	private ArrayList<String> courseTaken = new ArrayList<String>();
 	public void initialize() throws Exception
 	{
-		String major, pos, areaA = null, areaB = null, areaC = null, areaD = null, areaE = null, areaF = null, majorArea = null;
-		String[] parsedAreaA, parsedAreaB, parsedAreaC, parsedAreaD, parsedAreaE, parsedAreaF, parsedMajorArea;
+		String major, pos, areaA = null, areaB = null, areaC = null, areaD = null, areaE = null, areaF = null, majorArea = null, majorElectives = null, otherArea = null, electives = null;
+		String[] parsedAreaA, parsedAreaB, parsedAreaC, parsedAreaD, parsedAreaE, parsedAreaF, parsedMajorArea, parsedMajorElectives, parsedOther, parsedElectives;
 		Connection con = IlearnDBConfig.getConnection();
 		Statement stmt = con.createStatement();
 		String getPlan = "select * from collegeplan";
@@ -45,23 +50,32 @@ public class planofstudyController {
 			areaE = rs.getString("AreaE");
 			areaF = rs.getString("AreaF");
 			majorArea = rs.getString("majorArea");
+			majorElectives = rs.getString("majorElec");
+			otherArea = rs.getString("areaOther");
+			electives = rs.getString("electives");
 		}
 		con.close();
 			parsedAreaA = parser.and(areaA);
-			//parsedAreaB = parser.and(areaB);
+			parsedAreaB = parser.and(areaB);
 			parsedAreaC = parser.and(areaC);
 			parsedAreaD = parser.and(areaD);
 			parsedAreaE = parser.and(areaE);
 			parsedAreaF = parser.and(areaF);
 			parsedMajorArea = parser.and(majorArea);
+			parsedMajorElectives = parser.and(majorElectives);
+			parsedOther = parser.and(otherArea);
+			parsedElectives = parser.and(electives);
 			
 			setTitlePane(listA, parsedAreaA);
-			//setTitlePane(listB, parsedAreaB);
+			setTitlePane(listB, parsedAreaB);
 			setTitlePane(listC, parsedAreaC);
 			setTitlePane(listD, parsedAreaD);
 			setTitlePane(listE, parsedAreaE);
 			setTitlePane(listF, parsedAreaF);
 			setTitlePane(listMajor, parsedMajorArea);
+			setTitlePane(listOther, parsedOther);
+			setTitlePane(listMajorElective, parsedMajorElectives);
+			setTitlePane(listElective, parsedElectives);
 		/*
 		
 		TextArea desc = new TextArea();
@@ -81,7 +95,9 @@ public class planofstudyController {
 				{
 					String[] course = getCourseInfo(orClass[o]); 
 					TextArea desc = new TextArea();
-					TitledPane titleOrArea = new TitledPane(course[0], desc);
+					CheckBox taken = new CheckBox("Taken");
+					VBox format = new VBox(desc, taken);
+					TitledPane titleOrArea = new TitledPane(course[0], format);
 					list.getPanes().addAll(titleOrArea);
 					desc.setWrapText(true);
 					desc.setText("Course ID: " + orClass[o] + "\n");
@@ -94,7 +110,9 @@ public class planofstudyController {
 			{
 				String[] course = getCourseInfo(parsedArea[i]); 
 				TextArea desc = new TextArea();
-				TitledPane titleAndArea = new TitledPane(course[0], desc);
+				CheckBox taken = new CheckBox("Taken");
+				VBox format = new VBox(desc, taken);
+				TitledPane titleAndArea = new TitledPane(course[0], format);
 				list.getPanes().addAll(titleAndArea);
 				desc.setWrapText(true);
 				desc.setText("Course ID: " + parsedArea[i] + "\n");
@@ -132,5 +150,6 @@ public class planofstudyController {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+
 
 }
